@@ -1,4 +1,5 @@
 package modelo;
+
 import interfaces.ILista;
 import interfaces.INodo;
 import java.util.ArrayList;
@@ -7,9 +8,11 @@ import java.util.List;
 
 public class Lista implements ILista {
     private INodo primero;
-    
+    private INodo ultimo;
+
     public Lista() {
         this.primero = null;
+        this.ultimo = null;
     }
 
     @Override
@@ -37,12 +40,14 @@ public class Lista implements ILista {
         INodo nuevo = new Nodo(dato);
         if (esVacia(false)) {
             primero = nuevo;
+            ultimo = nuevo;
         } else {
             INodo actual = primero;
             while (actual.getSiguiente() != null) {
                 actual = actual.getSiguiente();
             }
-            actual.setSiguiente(nuevo);
+            ultimo = nuevo;
+            actual.setSiguiente(ultimo);
             nuevo.setAnterior(actual);
         }
     }
@@ -69,6 +74,44 @@ public class Lista implements ILista {
         }
     }
    
+    @Override
+    public boolean insertarGenerico(Vehiculo dato, int pos) {
+        if (esVacia(true) || pos < 0 || pos > cantidadElementos()) {
+            System.out.println("No se ha podido insertar un vehiculo a la lista.");
+            return false;
+        }
+
+        if (pos == 0) {
+            insertarPrimero(dato);
+            return true;
+        }
+
+        if (pos == cantidadElementos()) {
+            insertarUltimo(dato);
+            return true;
+        }
+
+        INodo actual = primero;
+        int contador = 0;
+    
+        while (actual != null && contador < pos) { // Posicionarse
+            actual = actual.getSiguiente();
+            contador++;
+        }
+        INodo nuevo = new Nodo(dato);
+        nuevo.setSiguiente(actual);
+        nuevo.setAnterior(actual.getAnterior()); // No es null pointer ya que pos == 0 insertar
+
+        if (actual.getAnterior() != null) {
+            INodo anterior = actual.getAnterior();
+            anterior.setSiguiente(nuevo);
+        }
+    
+        actual.setAnterior(nuevo);
+    
+        return true;
+    }
+    
     @Override
     public int cantidadElementos() {
         int contador = 0;

@@ -17,6 +17,8 @@ public class TestPersonaVehiculos {
 		Vehiculo v4 = new Vehiculo("FF985LL", "Peugeot 208");
 		Vehiculo v5 = new Vehiculo("GRV245", "Audi A4");
 
+		Vehiculo v10 = new Vehiculo("JJBA07", "SI");
+
 		Lista vehiculos = p.getListaVehiculos();
 		vehiculos.insertarPrimero(v);
 		vehiculos.insertarPrimero(v3);
@@ -44,6 +46,8 @@ public class TestPersonaVehiculos {
 		System.out.println(vehiculoEliminar);
 		System.out.println("*".repeat(40) + "Lista sin peugot:");
 		vehiculos.mostrarLista();
+		System.out.println("*".repeat(40) + "Añadir ante-ultimo:");
+		System.out.println(vehiculos.insertarGenerico(v10, 3));
 		System.out.println("*".repeat(40) + "Full persona:");
 		p.mostrarPersona();
 

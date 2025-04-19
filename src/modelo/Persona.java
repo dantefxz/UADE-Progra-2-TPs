@@ -1,7 +1,6 @@
 package modelo;
 
 import interfaces.IPersona;
-//import java.util.List;
 
 public class Persona implements IPersona {
 	private int dni;
