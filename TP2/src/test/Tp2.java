@@ -24,7 +24,7 @@ public class Tp2 {
 
         /* MEJORAR LOS PRINTS PORQUE SON HORRIBLES Y AGREGAR ELIMNAR IGUAL TALVEZ LO AGREGO MÑN A LA MÑN
         * DSP TE DIGO
-        * SALUDITOS LATIS :)  */
+        * SALUDITOS LATIS */
 
         System.out.println("\nInorden:");
         arbol.recorridoInorden();
