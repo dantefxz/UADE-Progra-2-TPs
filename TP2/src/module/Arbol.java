@@ -83,4 +83,45 @@ public class Arbol implements IArbol {
         }
     }
 
+    public INodo eliminar(int DNI) {
+        raiz = eliminarRec(raiz, DNI);
+        return null;
+    }
+
+    private INodo eliminarRec(INodo nodo, int DNI) {
+        if (nodo == null) return null;
+
+        if (DNI < nodo.getDato()) {
+            nodo.setIzquierdo(eliminarRec(nodo.getIzquierdo(), DNI));
+        } else if (DNI > nodo.getDato()) {
+            nodo.setDerecho(eliminarRec(nodo.getDerecho(), DNI));
+        } else {
+            // Caso 1: nodo sin hijos
+            if (nodo.getIzquierdo() == null && nodo.getDerecho() == null) {
+                return null;
+            }
+
+            // Caso 2: un solo hijo
+            if (nodo.getIzquierdo() == null) {
+                return nodo.getDerecho();
+            }
+            if (nodo.getDerecho() == null) {
+                return nodo.getIzquierdo();
+            }
+
+            // Caso 3: dos hijos
+            INodo sucesor = encontrarMinimo(nodo.getDerecho());
+            nodo.setPersona(((Nodo) sucesor).getPersona());
+            nodo.setDerecho(eliminarRec(nodo.getDerecho(), sucesor.getDato()));
+        }
+        return nodo;
+    }
+
+    private INodo encontrarMinimo(INodo nodo) {
+        while (nodo.getIzquierdo() != null) {
+            nodo = nodo.getIzquierdo();
+        }
+        return nodo;
+    }
+
 }

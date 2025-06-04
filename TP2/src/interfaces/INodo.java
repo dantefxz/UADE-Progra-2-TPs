@@ -11,6 +11,5 @@ public interface INodo {
     Persona getPersona();
     String toString();
     int getDato();
-
-
+    void setPersona(Persona persona);
 }

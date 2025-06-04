@@ -41,6 +41,10 @@ public class Nodo implements INodo {
 
     @Override
     public String toString() {
-        return persona.toString();  // Por ejemplo: "Juan (12345678)"
+        return persona.toString();  // Por ejemplo: "Gonza (46952312)"
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 }

@@ -22,9 +22,10 @@ public class Tp2 {
         arbol.insertar(new Persona(87976831, "Jose"));
 
 
-        /* MEJORAR LOS PRINTS PORQUE SON HORRIBLES Y AGREGAR ELIMNAR IGUAL TALVEZ LO AGREGO MÑN A LA MÑN
-        * DSP TE DIGO
-        * SALUDITOS LATIS */
+        /* MEJORAR LOS PRINTS PORQUE SON HORRIBLES
+        * YA AGREGE EL ELIMINAR
+        * SALUDOS LAUTY/LATIS :)
+        */
 
         System.out.println("\nInorden:");
         arbol.recorridoInorden();
@@ -36,5 +37,10 @@ public class Tp2 {
         arbol.recorridoPostorden();
 
         System.out.println("\nBuscando DNI 15978554: " + arbol.buscar(15978554).getPersona());
+
+        System.out.println("\nEliminamos el DNI 13165489: " + arbol.eliminar(13165489));
+        System.out.println("\nPreorden:");
+        arbol.recorridoPreorden();
     }
+
 }
