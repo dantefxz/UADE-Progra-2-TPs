@@ -42,9 +42,13 @@ public class Arbol implements IArbol {
     private boolean buscarRec(INodo nodo, IPersona persona) {
         if (nodo == null) return false;
         int comp = comparador.compare(persona, nodo.getPersona());
-        if (comp == 0) return true;
-        else if (comp < 0) return buscarRec(nodo.getIzquierdo(), persona);
-        else return buscarRec(nodo.getDerecho(), persona);
+        if (comp == 0){
+            return true;
+        } else if (comp <0) {
+            return buscarRec(nodo.getIzquierdo(), persona);
+        } else {
+            return buscarRec(nodo.getDerecho(), persona);
+        }
     }
 
     @Override

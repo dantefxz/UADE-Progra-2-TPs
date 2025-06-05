@@ -10,6 +10,7 @@ public class Tp2 {
         Comparator<IPersona> porDni = Comparator.comparingInt(IPersona::getDni);
         Comparator<IPersona> porNombre = Comparator.comparing(IPersona::getNombre);
 
+        // Los comparadores es para que el árbol funcione con Nombre/DNI, tanto para su lectura como su edición (Eliminar, buscar, recorrer)
         Arbol arbol = new Arbol(porDni);
 
         arbol.insertar(new Persona(46952312, "Gonza"));
@@ -36,11 +37,11 @@ public class Tp2 {
         arbol.recorridoPostorden();
 
         // Buscar por DNI
-        IPersona buscadaPorDni = new Persona(15978554, "");
+        IPersona buscadaPorDni = new Persona(15978554, ""); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
         System.out.println("\nBuscando por DNI 15978554: " + (arbol.buscar(buscadaPorDni) ? "Encontrado" : "No encontrado"));
 
         // Eliminar por DNI
-        IPersona aEliminar = new Persona(13165489, "");
+        IPersona aEliminar = new Persona(13165489, ""); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
         System.out.println("\nEliminando a DNI 13165489: " + (arbol.eliminar(aEliminar) ? "Eliminado" : "No eliminado"));
 
         System.out.println("\nInorden:");
@@ -54,11 +55,11 @@ public class Tp2 {
         arbol.setComparador(porNombre);
 
         // Buscar por nombre
-        IPersona buscadaPorNombre = new Persona(0, "Carlos");
+        IPersona buscadaPorNombre = new Persona(0, "Carlos"); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
         System.out.println("\nBuscando por nombre 'Carlos': " + (arbol.buscar(buscadaPorNombre) ? "Encontrado" : "No encontrado"));
 
         // Eliminar por nombre
-        IPersona eliminarPorNombre = new Persona(0, "Fran");
+        IPersona eliminarPorNombre = new Persona(0, "Fran"); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
         System.out.println("\nEliminando por nombre 'Fran': " + (arbol.eliminar(eliminarPorNombre) ? "Eliminado" : "No eliminado"));
 
         System.out.println("\nInorden:");
