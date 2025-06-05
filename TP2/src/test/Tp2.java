@@ -37,12 +37,12 @@ public class Tp2 {
         arbol.recorridoPostorden();
 
         // Buscar por DNI
-        IPersona buscadaPorDni = new Persona(15978554, ""); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
-        System.out.println("\nBuscando por DNI 15978554: " + (arbol.buscar(buscadaPorDni) ? "Encontrado" : "No encontrado"));
+        IPersona personaABuscar = new Persona(15978554, ""); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
+        System.out.println("\nBuscando por DNI 15978554: " + (arbol.buscar(personaABuscar) ? "Encontrado" : "No encontrado"));
 
         // Eliminar por DNI
-        IPersona aEliminar = new Persona(13165489, ""); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
-        System.out.println("\nEliminando a DNI 13165489: " + (arbol.eliminar(aEliminar) ? "Eliminado" : "No eliminado"));
+        IPersona personaAEliminar = new Persona(13165489, ""); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
+        System.out.println("\nEliminando a DNI 13165489: " + (arbol.eliminar(personaAEliminar) ? "Eliminado" : "No eliminado"));
 
         System.out.println("\nInorden:");
         arbol.recorridoInorden();
@@ -55,12 +55,12 @@ public class Tp2 {
         arbol.setComparador(porNombre);
 
         // Buscar por nombre
-        IPersona buscadaPorNombre = new Persona(0, "Carlos"); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
-        System.out.println("\nBuscando por nombre 'Carlos': " + (arbol.buscar(buscadaPorNombre) ? "Encontrado" : "No encontrado"));
+        IPersona personaABuscarN = new Persona(0, "Carlos"); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
+        System.out.println("\nBuscando por nombre 'Carlos': " + (arbol.buscar(personaABuscarN) ? "Encontrado" : "No encontrado"));
 
         // Eliminar por nombre
-        IPersona eliminarPorNombre = new Persona(0, "Fran"); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
-        System.out.println("\nEliminando por nombre 'Fran': " + (arbol.eliminar(eliminarPorNombre) ? "Eliminado" : "No eliminado"));
+        IPersona personaAEliminarN = new Persona(0, "Fran"); // Se debe hacer un new Persona ya que Arbol trabaja con IPersona
+        System.out.println("\nEliminando por nombre 'Fran': " + (arbol.eliminar(personaAEliminarN) ? "Eliminado" : "No eliminado"));
 
         System.out.println("\nInorden:");
         arbol.recorridoInorden();
