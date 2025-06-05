@@ -1,9 +1,16 @@
 package test;
-import module.*;
+
+import module.Arbol;
+import module.Persona;
+import interfaces.IPersona;
+import java.util.Comparator;
 
 public class Tp2 {
     public static void main(String[] args) {
-        Arbol arbol = new Arbol();
+        Comparator<IPersona> porDni = Comparator.comparingInt(IPersona::getDni);
+        Comparator<IPersona> porNombre = Comparator.comparing(IPersona::getNombre);
+
+        Arbol arbol = new Arbol(porDni);
 
         arbol.insertar(new Persona(46952312, "Gonza"));
         arbol.insertar(new Persona(11122233, "Latis"));
@@ -21,26 +28,44 @@ public class Tp2 {
         arbol.insertar(new Persona(15318496, "Mike"));
         arbol.insertar(new Persona(87976831, "Jose"));
 
+        System.out.println("\nInorden:");
+        arbol.recorridoInorden();
+        System.out.println("Preorden:");
+        arbol.recorridoPreorden();
+        System.out.println("Postorden:");
+        arbol.recorridoPostorden();
 
-        /* MEJORAR LOS PRINTS PORQUE SON HORRIBLES
-        * YA AGREGE EL ELIMINAR
-        * SALUDOS LAUTY/LATIS :)
-        */
+        // Buscar por DNI
+        IPersona buscadaPorDni = new Persona(15978554, "");
+        System.out.println("\nBuscando por DNI 15978554: " + (arbol.buscar(buscadaPorDni) ? "Encontrado" : "No encontrado"));
+
+        // Eliminar por DNI
+        IPersona aEliminar = new Persona(13165489, "");
+        System.out.println("\nEliminando a DNI 13165489: " + (arbol.eliminar(aEliminar) ? "Eliminado" : "No eliminado"));
 
         System.out.println("\nInorden:");
         arbol.recorridoInorden();
-
-        System.out.println("\nPreorden:");
+        System.out.println("Preorden:");
         arbol.recorridoPreorden();
-
-        System.out.println("\nPostorden:");
+        System.out.println("Postorden:");
         arbol.recorridoPostorden();
 
-        System.out.println("\nBuscando DNI 15978554: " + arbol.buscar(15978554).getPersona());
+        // Cambiar comparador a nombre
+        arbol.setComparador(porNombre);
 
-        System.out.println("\nEliminamos el DNI 13165489: " + arbol.eliminar(13165489));
-        System.out.println("\nPreorden:");
+        // Buscar por nombre
+        IPersona buscadaPorNombre = new Persona(0, "Carlos");
+        System.out.println("\nBuscando por nombre 'Carlos': " + (arbol.buscar(buscadaPorNombre) ? "Encontrado" : "No encontrado"));
+
+        // Eliminar por nombre
+        IPersona eliminarPorNombre = new Persona(0, "Fran");
+        System.out.println("\nEliminando por nombre 'Fran': " + (arbol.eliminar(eliminarPorNombre) ? "Eliminado" : "No eliminado"));
+
+        System.out.println("\nInorden:");
+        arbol.recorridoInorden();
+        System.out.println("Preorden:");
         arbol.recorridoPreorden();
+        System.out.println("Postorden:");
+        arbol.recorridoPostorden();
     }
-
 }

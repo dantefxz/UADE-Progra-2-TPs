@@ -1,12 +1,13 @@
 package interfaces;
 
-import module.Persona;
+import java.util.Comparator;
 
 public interface IArbol {
-
-    void insertar(Persona persona);
-    INodo buscar(int DNI);
-    void recorridoPreorden();
+    void insertar(IPersona persona);
+    boolean buscar(IPersona persona);
+    boolean eliminar(IPersona persona);
     void recorridoInorden();
+    void recorridoPreorden();
     void recorridoPostorden();
+    void setComparador(Comparator<IPersona> comparador);
 }

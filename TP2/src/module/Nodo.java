@@ -1,50 +1,46 @@
 package module;
 
 import interfaces.INodo;
+import interfaces.IPersona;
 
 public class Nodo implements INodo {
-
-    private Persona persona;
+    private IPersona persona;
     private INodo izquierdo;
     private INodo derecho;
 
-    public Nodo(Persona persona) {
+    public Nodo(IPersona persona) {
         this.persona = persona;
         this.izquierdo = null;
         this.derecho = null;
     }
 
-    // Getters y setters
-    public Persona getPersona() {
+    @Override
+    public IPersona getPersona() {
         return persona;
     }
 
-    public int getDato() {
-        return persona.getDni();  // usado para comparación
+    @Override
+    public void setPersona(IPersona persona) {
+        this.persona = persona;
     }
 
+    @Override
     public INodo getIzquierdo() {
         return izquierdo;
     }
 
+    @Override
     public void setIzquierdo(INodo izquierdo) {
         this.izquierdo = izquierdo;
     }
 
+    @Override
     public INodo getDerecho() {
         return derecho;
     }
 
+    @Override
     public void setDerecho(INodo derecho) {
         this.derecho = derecho;
-    }
-
-    @Override
-    public String toString() {
-        return persona.toString();  // Por ejemplo: "Gonza (46952312)"
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 }

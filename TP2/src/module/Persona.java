@@ -1,6 +1,8 @@
 package module;
 
-public class Persona {
+import interfaces.IPersona;
+
+public class Persona implements IPersona {
     private int dni;
     private String nombre;
 
@@ -8,13 +10,24 @@ public class Persona {
         this.dni = dni;
         this.nombre = nombre;
     }
-
+    @Override
     public int getDni() {
         return dni;
     }
 
+    @Override
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    @Override
     public String getNombre() {
         return nombre;
+    }
+
+    @Override
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
