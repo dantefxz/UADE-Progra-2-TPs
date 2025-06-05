@@ -68,5 +68,31 @@ public class Tp2 {
         arbol.recorridoPreorden();
         System.out.println("Postorden:");
         arbol.recorridoPostorden();
+
+        // Arbol construido en base de nombre
+        System.out.println("Arbol por nombre:");
+        Arbol arbol2 = new Arbol(porNombre);
+        arbol2.insertar(new Persona(46952312, "Gonza"));
+        arbol2.insertar(new Persona(11122233, "Latis"));
+        arbol2.insertar(new Persona(15978554, "Dante"));
+        arbol2.insertar(new Persona(15615164, "Cami"));
+        arbol2.insertar(new Persona(47895656, "Abru"));
+        arbol2.insertar(new Persona(78984564, "Tincho"));
+        arbol2.insertar(new Persona(78789514, "Fran"));
+        arbol2.insertar(new Persona(31316878, "Juan"));
+        arbol2.insertar(new Persona(62624994, "Carlos"));
+        arbol2.insertar(new Persona(13165489, "Hernesto"));
+        arbol2.insertar(new Persona(78985313, "Martin"));
+        arbol2.insertar(new Persona(87489741, "Leo"));
+        arbol2.insertar(new Persona(79875435, "Emma"));
+        arbol2.insertar(new Persona(15318496, "Mike"));
+        arbol2.insertar(new Persona(87976831, "Jose"));
+
+        System.out.println("\nInorden:");
+        arbol2.recorridoInorden();
+        System.out.println("Preorden:");
+        arbol2.recorridoPreorden();
+        System.out.println("Postorden:");
+        arbol2.recorridoPostorden();
     }
 }
