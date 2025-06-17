@@ -4,10 +4,10 @@ import interfaces.*;
 
 public class TestGrafos {
     public static void main(String[] args){
-        Grafo<Persona> grafo = new Grafo<>(true);
+        Grafo<Persona> grafo = new Grafo<>(false);
         Persona p1 = new Persona(465468,"Lauty");
         Persona p2 = new Persona(213136,"Gonza");
-        Persona p3 = new Persona(978764,"Dante");
+        Persona p3 = new Persona(465468,"Dante");
         Persona p4 = new Persona(156446,"Octa");
 
         // Crear nodos

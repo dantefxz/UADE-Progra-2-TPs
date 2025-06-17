@@ -9,7 +9,7 @@ public class Grafo<T> implements IGrafo<T> {
     private boolean dirigido;
 
     public Grafo(boolean dirigido) {
-
+        this.dirigido = dirigido;
         this.nodos = new HashMap<>();
     }
 
