@@ -15,5 +15,7 @@ public interface IGrafo<T> {
 
     void dfs(T inicio);
 
+    void setDirigido(boolean valor);
+    
     Map<T, INodo<T>> getNodos();
 }

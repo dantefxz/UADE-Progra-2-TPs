@@ -4,10 +4,10 @@ import interfaces.*;
 
 public class TestGrafos {
     public static void main(String[] args){
-        Grafo<Persona> grafo = new Grafo<>(false);
+        Grafo<Persona> grafo = new Grafo<>(true);
         Persona p1 = new Persona(465468,"Lauty");
         Persona p2 = new Persona(213136,"Gonza");
-        Persona p3 = new Persona(465468,"Dante");
+        Persona p3 = new Persona(735322,"Dante");
         Persona p4 = new Persona(156446,"Octa");
 
         // Crear nodos
@@ -29,6 +29,7 @@ public class TestGrafos {
         grafo.agregarArista(p4, p1);
         grafo.agregarArista(p2, p2);
 
+    
         // Mostrar lista de adyacencia
         System.out.println("Lista de adyacencia:");
         grafo.mostrarListaAdyacencia();
@@ -44,5 +45,8 @@ public class TestGrafos {
         System.out.println("\nRecorrido DFS"); //Desde Lauty
         grafo.dfs(p1);
 
+        // Para que el grafo sea dirigido, hay que agregar no hay que agregar la conexion del destino al mismo origen
+        // Ambos se pueden recorrer pero uno está limitado a sus conexiones y otro no. Es decir, se pueden recorrer pero son
+        // distintos resultados.
     }
 }

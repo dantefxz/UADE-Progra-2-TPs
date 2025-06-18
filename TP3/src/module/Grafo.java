@@ -14,6 +14,11 @@ public class Grafo<T> implements IGrafo<T> {
     }
 
     @Override
+    public void setDirigido(boolean valor){
+        dirigido = valor;
+    }
+    
+    @Override
     public void agregarNodo(T valor) {
         nodos.putIfAbsent(valor, new Nodo<>(valor));
     }
