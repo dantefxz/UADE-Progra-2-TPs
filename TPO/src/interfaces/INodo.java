@@ -2,9 +2,9 @@ package interfaces;
 
 import java.util.List;
 
-public interface INodo {
-    int getValor();
-    List<INodo> getVecinos();
+public interface INodo<T> {
+    T getValor();
+    List<INodo<T>> getVecinos();
     List<Integer> getPesos();
-    void agregarVecino(INodo vecino, int peso);
+    void agregarVecino(INodo<T> vecino, int peso);
 }

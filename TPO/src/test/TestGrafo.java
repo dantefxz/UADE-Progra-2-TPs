@@ -5,7 +5,7 @@ import servicios.AStar;
 
 public class TestGrafo {
     public static void main(String[] args) {
-        Grafo grafo = new Grafo();
+        Grafo<Integer> grafo = new Grafo<>();
         for (int i = 1; i <= 5; i++) {
             grafo.agregarNodo(i);
         }
@@ -16,6 +16,7 @@ public class TestGrafo {
         grafo.agregarArista(3, 4, 1);
         grafo.agregarArista(4, 5, 3);
 
-        AStar.ejecutar(grafo, 1, 5, (a, b) -> 0); // heurística trivial para testeo
+        AStar<Integer> algoritmo = new AStar<>();
+        algoritmo.ejecutar(grafo, 1, 5, (a, b) -> 0); // Heurística trivial
     }
 }

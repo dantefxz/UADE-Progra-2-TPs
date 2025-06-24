@@ -3,22 +3,22 @@ package modelo;
 import interfaces.INodo;
 import java.util.*;
 
-public class Nodo implements INodo {
-    private int valor;
-    private List<INodo> vecinos;
+public class Nodo<T> implements INodo<T> {
+    private T valor;
+    private List<INodo<T>> vecinos;
     private List<Integer> pesos;
 
-    public Nodo(int valor) {
+    public Nodo(T valor) {
         this.valor = valor;
         this.vecinos = new ArrayList<>();
         this.pesos = new ArrayList<>();
     }
 
-    public int getValor() {
+    public T getValor() {
         return valor;
     }
 
-    public List<INodo> getVecinos() {
+    public List<INodo<T>> getVecinos() {
         return vecinos;
     }
 
@@ -26,7 +26,7 @@ public class Nodo implements INodo {
         return pesos;
     }
 
-    public void agregarVecino(INodo vecino, int peso) {
+    public void agregarVecino(INodo<T> vecino, int peso) {
         vecinos.add(vecino);
         pesos.add(peso);
     }
