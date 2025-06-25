@@ -1,7 +1,6 @@
 package interfaces;
 
 import modelo.Nodo;
-
 import java.util.Map;
 
 public interface IGrafo<T> {

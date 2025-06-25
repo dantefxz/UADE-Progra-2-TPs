@@ -20,3 +20,4 @@ public class TestGrafo {
         algoritmo.ejecutar(grafo, 1, 5, (a, b) -> 0); // Heurística trivial
     }
 }
+

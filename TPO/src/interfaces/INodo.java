@@ -8,3 +8,4 @@ public interface INodo<T> {
     List<Integer> getPesos();
     void agregarVecino(INodo<T> vecino, int peso);
 }
+
